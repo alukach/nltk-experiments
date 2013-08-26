@@ -98,10 +98,24 @@ Count word lengths
     (15, 70), (16, 22), (17, 12), (18, 1), (20, 1)]
     >>> fdist.max()  # Get most common word length
     3
-    >>> fdist[3]
+    >>> fdist[3]  # Get count of occurence for three letter words
     50223
-    >>> fdist.freq(3)
+    >>> fdist.freq(3)  # Get percentage value for the occurrence of three letter words in text
     0.19255882431878046
 
-    fdist.freq()
+#### Table 1-2. Functions defined for NLTK’s frequency distributions
 
+> Example | Description
+> --- | ---
+`fdist = FreqDist(samples)` | Create a frequency distribution containing the given samples
+> `fdist.inc(sample)` | Increment the count for this sample
+> `fdist['monstrous']` | Count of the number of times a given sample occurred
+> `fdist.freq('monstrous')` | Frequency of a given sample
+> `fdist.N()` | Total number of samples
+> `fdist.keys()` | The samples sorted in order of decreasing frequency
+> `for sample in fdist:` | Iterate over the samples, in order of decreasing frequency
+> `fdist.max()` | Sample with the greatest count
+> `fdist.tabulate()` | Tabulate the frequency distribution
+> `fdist.plot()` | Graphical plot of the frequency distribution
+> `fdist.plot(cumulative=True)` | Cumulative plot of the frequency distribution
+> `fdist1 < fdist2` | Test if samples in fdist1 occur less frequently than in fdist2
